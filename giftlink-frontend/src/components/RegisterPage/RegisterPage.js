@@ -16,7 +16,7 @@ function RegisterPage() {
     return (
         <div className="container mt-5">
             <div className="row justify-content-center">
-                <div className="col-md-6 col-lg-4">
+                <div className="col col-md-10 col-lg-12">
                     <div className="register-card p-4 border rounded">
                         <h2 className="text-center mb-4 font-weight-bold">Register</h2>
 
