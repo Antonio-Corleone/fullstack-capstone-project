@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { urlConfig } from '../../config';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './SearchPage.css'
 
 function SearchPage() {
 
@@ -110,7 +111,7 @@ function SearchPage() {
                         onChange={e => setSearchQuery(e.target.value)}
                     />
                     <button className="btn btn-primary" onClick={handleSearch}>Search</button>
-                    
+
                     <div className="search-results mt-4">
                         {searchResults.length > 0 ? (
                             searchResults.map(product => (
