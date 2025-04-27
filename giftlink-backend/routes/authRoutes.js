@@ -19,7 +19,7 @@ router.post('/register', async (req, res) => {
         const collection = db.collection("users");
         const existingEmail = await collection.findOne({ email });
         if (existingEmail) {
-            return res.status(400).send('User have already existed!')
+            return res.status(400).send({ error: 'User have already existed!' })
         }
 
         const salt = await bcryptjs.genSalt(10);
