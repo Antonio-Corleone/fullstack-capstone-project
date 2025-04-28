@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { urlConfig } from '../../config';
 import { useAppContext } from '../../context/AuthContext';
@@ -20,7 +20,7 @@ function LoginPage() {
         }
     }, [navigate])
 
-    const handleLogin = async () => {
+    const handleLogin = async (e) => {
         e.preventDefault();
         //api call
         const res = await fetch(`${urlConfig.backendUrl}/api/auth/login`, {
