@@ -29,7 +29,7 @@ export default function Navbar() {
         navigate(`/app`);
 
     }
-    const profileSecton = () => {
+    const profileSection = () => {
         navigate(`/app/profile`);
     }
     return (
@@ -55,7 +55,7 @@ export default function Navbar() {
                         <ul className="navbar-nav ml-auto">
                             {isLoggedIn ? (
                                 <>
-                                    <li className="nav-item"> <span className="nav-link" style={{ color: "black", cursor: "pointer" }} onClick={profileSecton}>Welcome, {userName}</span> </li>
+                                    <li className="nav-item"> <span className="nav-link" style={{ color: "black", cursor: "pointer" }} onClick={profileSection}>Welcome, {userName}</span> </li>
                                     <li className="nav-item"><button className="nav-link login-btn" onClick={handleLogout}>Logout</button></li>
                                 </>
                             ) : (
