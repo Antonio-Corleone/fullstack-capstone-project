@@ -1,3 +1,4 @@
+/*jshint esversion: 8 */
 const express = require('express');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -19,7 +20,7 @@ router.post('/register', async (req, res) => {
         const collection = db.collection("users");
         const existingEmail = await collection.findOne({ email });
         if (existingEmail) {
-            return res.status(400).send({ error: 'User have already existed!' })
+            return res.status(400).send({ error: 'User have already existed!' });
         }
 
         const salt = await bcryptjs.genSalt(10);
@@ -49,14 +50,14 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-    const { email, password } = req.body
+    const { email, password } = req.body;
     try {
         const db = await connectToDatabase();
         const collection = db.collection("users");
         const theUser = await collection.findOne({ email });
 
         if (theUser) {
-            let result = await bcryptjs.compare(password, theUser.password)
+            let result = await bcryptjs.compare(password, theUser.password);
             if (!result) {
                 logger.error('Passwords do not match');
                 return res.status(404).json({ error: 'Wrong pasword' });
