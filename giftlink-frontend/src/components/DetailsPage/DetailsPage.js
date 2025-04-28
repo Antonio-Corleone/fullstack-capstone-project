@@ -36,7 +36,7 @@ function DetailsPage() {
 
         window.scrollTo(0, 0)
 
-    }, [productId]);
+    }, [productId, navigate]);
 
 
     const handleBackClick = () => {
